@@ -97,7 +97,7 @@ const useIsoflow = () => {
     return state.rendererEl;
   });
 
-  const ModelActions = useModelStore((state) => {
+  const modelActions = useModelStore((state) => {
     return state.actions;
   });
 
@@ -106,7 +106,7 @@ const useIsoflow = () => {
   });
 
   return {
-    Model: ModelActions,
+    model: modelActions,
     uiState: uiStateActions,
     rendererEl
   };
