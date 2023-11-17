@@ -3,7 +3,11 @@ import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
 import { theme } from 'src/styles/theme';
 import { IsoflowProps } from 'src/types';
-import { setWindowCursor, modelFromModelStore } from 'src/utils';
+import {
+  setWindowCursor,
+  modelFromModelStore,
+  uiStateFromUiStateStore
+} from 'src/utils';
 import { useModelStore, ModelProvider } from 'src/stores/modelStore';
 import { SceneProvider } from 'src/stores/sceneStore';
 import { GlobalStyles } from 'src/styles/GlobalStyles';
@@ -20,10 +24,11 @@ const App = ({
   height = '100%',
   onModelUpdated,
   enableDebugTools = false,
-  editorMode = 'EDITABLE'
+  editorMode = 'EDITABLE',
+  onInteraction
 }: IsoflowProps) => {
-  const uiStateActions = useUiStateStore((state) => {
-    return state.actions;
+  const uiState = useUiStateStore((state) => {
+    return state;
   });
   const initialDataManager = useInitialDataManager();
   const model = useModelStore((state) => {
@@ -37,9 +42,9 @@ const App = ({
   }, [initialData, load]);
 
   useEffect(() => {
-    uiStateActions.setEditorMode(editorMode);
-    uiStateActions.setMainMenuOptions(mainMenuOptions);
-  }, [editorMode, uiStateActions, mainMenuOptions]);
+    uiState.actions.setEditorMode(editorMode);
+    uiState.actions.setMainMenuOptions(mainMenuOptions);
+  }, [editorMode, uiState.actions, mainMenuOptions]);
 
   useEffect(() => {
     return () => {
@@ -54,8 +59,14 @@ const App = ({
   }, [model, initialDataManager.isReady, onModelUpdated]);
 
   useEffect(() => {
-    uiStateActions.setEnableDebugTools(enableDebugTools);
-  }, [enableDebugTools, uiStateActions]);
+    uiState.actions.setEnableDebugTools(enableDebugTools);
+  }, [enableDebugTools, uiState.actions]);
+
+  useEffect(() => {
+    if (!onInteraction) return;
+
+    onInteraction(uiStateFromUiStateStore(uiState));
+  }, [uiState, onInteraction]);
 
   if (!initialDataManager.isReady) return null;
 
@@ -92,26 +103,5 @@ export const Isoflow = (props: IsoflowProps) => {
   );
 };
 
-const useIsoflow = () => {
-  const rendererEl = useUiStateStore((state) => {
-    return state.rendererEl;
-  });
-
-  const modelActions = useModelStore((state) => {
-    return state.actions;
-  });
-
-  const uiStateActions = useUiStateStore((state) => {
-    return state.actions;
-  });
-
-  return {
-    model: modelActions,
-    uiState: uiStateActions,
-    rendererEl
-  };
-};
-
-export { useIsoflow };
 export * from 'src/standaloneExports';
 export default Isoflow;

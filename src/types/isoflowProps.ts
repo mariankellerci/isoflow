@@ -1,4 +1,5 @@
 import type { EditorModeEnum, MainMenuOptions } from './common';
+import { UiState } from './ui';
 import type { Model } from './model';
 
 export type InitialData = Model & {
@@ -14,4 +15,5 @@ export interface IsoflowProps {
   height?: number | string;
   enableDebugTools?: boolean;
   editorMode?: keyof typeof EditorModeEnum;
+  onInteraction?: (uiState: UiState) => void;
 }
