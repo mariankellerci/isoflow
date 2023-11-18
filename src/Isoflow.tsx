@@ -1,22 +1,20 @@
 import React, { useEffect } from 'react';
-import { ThemeProvider } from '@mui/material/styles';
 import { Box } from '@mui/material';
-import { theme } from 'src/styles/theme';
 import { IsoflowProps } from 'src/types';
 import {
   setWindowCursor,
   modelFromModelStore,
   uiStateFromUiStateStore
 } from 'src/utils';
-import { useModelStore, ModelProvider } from 'src/stores/modelStore';
-import { SceneProvider } from 'src/stores/sceneStore';
+import { useModelStore } from 'src/stores/modelStore';
 import { GlobalStyles } from 'src/styles/GlobalStyles';
 import { Renderer } from 'src/components/Renderer/Renderer';
 import { UiOverlay } from 'src/components/UiOverlay/UiOverlay';
-import { UiStateProvider, useUiStateStore } from 'src/stores/uiStateStore';
+import { useUiStateStore } from 'src/stores/uiStateStore';
 import { INITIAL_DATA, MAIN_MENU_OPTIONS } from 'src/config';
 import { useInitialDataManager } from 'src/hooks/useInitialDataManager';
 import { useIsoflow } from 'src/hooks/useIsoflow';
+import { IsoflowProvider } from './stores/IsoflowProvider';
 
 const Isoflow = ({
   initialData,
@@ -87,22 +85,6 @@ const Isoflow = ({
         <UiOverlay />
       </Box>
     </>
-  );
-};
-
-type IsoflowProviderProps = IsoflowProps & {
-  children: React.ReactNode;
-};
-
-const IsoflowProvider = ({ children }: IsoflowProviderProps) => {
-  return (
-    <ThemeProvider theme={theme}>
-      <ModelProvider>
-        <SceneProvider>
-          <UiStateProvider>{children}</UiStateProvider>
-        </SceneProvider>
-      </ModelProvider>
-    </ThemeProvider>
   );
 };
 
