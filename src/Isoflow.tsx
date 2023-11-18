@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, memo } from 'react';
 import { Box } from '@mui/material';
 import { IsoflowProps } from 'src/types';
 import {
@@ -16,82 +16,84 @@ import { useInitialDataManager } from 'src/hooks/useInitialDataManager';
 import { useIsoflow } from 'src/hooks/useIsoflow';
 import { IsoflowProvider } from './stores/IsoflowProvider';
 
-const IsoflowConsumer = ({
-  initialData,
-  mainMenuOptions = MAIN_MENU_OPTIONS,
-  width = '100%',
-  height = '100%',
-  onModelUpdated,
-  enableDebugTools = false,
-  editorMode = 'EDITABLE',
-  onInteraction
-}: IsoflowProps) => {
-  const uiState = useUiStateStore((state) => {
-    return state;
-  });
-  const initialDataManager = useInitialDataManager();
-  const model = useModelStore((state) => {
-    return modelFromModelStore(state);
-  });
+const IsoflowConsumer = memo(
+  ({
+    initialData,
+    mainMenuOptions = MAIN_MENU_OPTIONS,
+    width = '100%',
+    height = '100%',
+    onModelUpdated,
+    enableDebugTools = false,
+    editorMode = 'EDITABLE',
+    onInteraction
+  }: IsoflowProps) => {
+    const uiState = useUiStateStore((state) => {
+      return state;
+    });
+    const initialDataManager = useInitialDataManager();
+    const model = useModelStore((state) => {
+      return modelFromModelStore(state);
+    });
 
-  const { load } = initialDataManager;
+    const { load } = initialDataManager;
 
-  useEffect(() => {
-    load({ ...INITIAL_DATA, ...initialData });
-  }, [initialData, load]);
+    useEffect(() => {
+      load({ ...INITIAL_DATA, ...initialData });
+    }, [initialData, load]);
 
-  useEffect(() => {
-    uiState.actions.setEditorMode(editorMode);
-    uiState.actions.setMainMenuOptions(mainMenuOptions);
-  }, [editorMode, uiState.actions, mainMenuOptions]);
+    useEffect(() => {
+      uiState.actions.setEditorMode(editorMode);
+      uiState.actions.setMainMenuOptions(mainMenuOptions);
+    }, [editorMode, uiState.actions, mainMenuOptions]);
 
-  useEffect(() => {
-    return () => {
-      setWindowCursor('default');
-    };
-  }, []);
+    useEffect(() => {
+      return () => {
+        setWindowCursor('default');
+      };
+    }, []);
 
-  useEffect(() => {
-    if (!initialDataManager.isReady || !onModelUpdated) return;
+    useEffect(() => {
+      if (!initialDataManager.isReady || !onModelUpdated) return;
 
-    onModelUpdated(model);
-  }, [model, initialDataManager.isReady, onModelUpdated]);
+      onModelUpdated(model);
+    }, [model, initialDataManager.isReady, onModelUpdated]);
 
-  useEffect(() => {
-    uiState.actions.setEnableDebugTools(enableDebugTools);
-  }, [enableDebugTools, uiState.actions]);
+    useEffect(() => {
+      uiState.actions.setEnableDebugTools(enableDebugTools);
+    }, [enableDebugTools, uiState.actions]);
 
-  useEffect(() => {
-    if (!onInteraction) return;
+    useEffect(() => {
+      if (!onInteraction) return;
 
-    onInteraction(uiStateFromUiStateStore(uiState));
-  }, [uiState, onInteraction]);
+      onInteraction(uiStateFromUiStateStore(uiState));
+    }, [uiState, onInteraction]);
 
-  if (!initialDataManager.isReady) return null;
+    if (!initialDataManager.isReady) return null;
 
-  return (
-    <>
-      <GlobalStyles />
-      <Box
-        sx={{
-          width,
-          height,
-          position: 'relative',
-          overflow: 'hidden',
-          transform: 'translateZ(0)'
-        }}
-      >
-        <Renderer />
-        <UiOverlay />
-      </Box>
-    </>
-  );
-};
+    return (
+      <>
+        <GlobalStyles />
+        <Box
+          sx={{
+            width,
+            height,
+            position: 'relative',
+            overflow: 'hidden',
+            transform: 'translateZ(0)'
+          }}
+        >
+          <Renderer />
+          <UiOverlay />
+        </Box>
+      </>
+    );
+  }
+);
 
 const Isoflow = (props: IsoflowProps) => {
   return (
     <IsoflowProvider>
-      <Isoflow {...props} />
+      <IsoflowConsumer {...props} />
     </IsoflowProvider>
   );
 };
