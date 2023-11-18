@@ -25,7 +25,7 @@ import {
 import { ModelStore } from 'src/types';
 import { useDiagramUtils } from 'src/hooks/useDiagramUtils';
 import { useUiStateStore } from 'src/stores/uiStateStore';
-import { Isoflow } from 'src/Isoflow';
+import Isoflow from 'src/Isoflow';
 import { Loader } from 'src/components/Loader/Loader';
 
 interface Props {
