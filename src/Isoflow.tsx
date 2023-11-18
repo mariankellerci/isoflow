@@ -16,7 +16,7 @@ import { useInitialDataManager } from 'src/hooks/useInitialDataManager';
 import { useIsoflow } from 'src/hooks/useIsoflow';
 import { IsoflowProvider } from './stores/IsoflowProvider';
 
-const Isoflow = ({
+const IsoflowConsumer = ({
   initialData,
   mainMenuOptions = MAIN_MENU_OPTIONS,
   width = '100%',
@@ -88,7 +88,7 @@ const Isoflow = ({
   );
 };
 
-const App = (props: IsoflowProps) => {
+const Isoflow = (props: IsoflowProps) => {
   return (
     <IsoflowProvider>
       <Isoflow {...props} />
@@ -96,6 +96,6 @@ const App = (props: IsoflowProps) => {
   );
 };
 
-export { useIsoflow, IsoflowProvider, Isoflow };
 export * from 'src/standaloneExports';
-export default App;
+export { useIsoflow, IsoflowProvider, IsoflowConsumer };
+export default Isoflow;
