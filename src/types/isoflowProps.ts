@@ -1,6 +1,6 @@
+import type { Model } from 'src/schemas/types';
 import type { EditorModeEnum, MainMenuOptions } from './common';
 import { UiState } from './ui';
-import type { Model } from './model';
 
 export type InitialData = Model & {
   fitToView?: boolean;

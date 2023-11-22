@@ -3,6 +3,6 @@
 export const version = PACKAGE_VERSION;
 export * as reducers from 'src/stores/reducers';
 export { INITIAL_DATA, INITIAL_SCENE_STATE } from 'src/config';
-export * from 'src/schemas';
 export type { IsoflowProps, InitialData, UiState } from 'src/types';
-export type * from 'src/types/model';
+export * from 'src/schemas';
+export type * from 'src/schemas/types';

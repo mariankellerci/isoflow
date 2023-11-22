@@ -1,5 +1,5 @@
 import { produce } from 'immer';
-import { model as modelFixture } from 'src/fixtures/model';
+import { model as modelFixture } from 'src/schemas/tests/fixtures/model';
 import { ItemReference } from 'src/types';
 import * as reducers from 'src/stores/reducers';
 

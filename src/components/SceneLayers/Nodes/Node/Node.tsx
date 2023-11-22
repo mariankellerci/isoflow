@@ -18,7 +18,7 @@ interface Props {
 }
 
 export const Node = ({ node, order }: Props) => {
-  const modelItem = useModelItem(node.id);
+  const modelItem = useModelItem(node.modelItem);
   const { iconComponent } = useIcon(modelItem.icon);
 
   const position = useMemo(() => {

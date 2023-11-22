@@ -13,7 +13,7 @@ import { useUiStateStore } from 'src/stores/uiStateStore';
 import { useDiagramUtils } from 'src/hooks/useDiagramUtils';
 
 export const ZoomControls = () => {
-  const uiStateStoreActions = useUiStateStore((state) => {
+  const uiStateActions = useUiStateStore((state) => {
     return state.actions;
   });
   const zoom = useUiStateStore((state) => {
@@ -28,7 +28,7 @@ export const ZoomControls = () => {
           <IconButton
             name="Zoom in"
             Icon={<ZoomOutIcon />}
-            onClick={uiStateStoreActions.decrementZoom}
+            onClick={uiStateActions.decrementZoom}
             disabled={zoom >= MAX_ZOOM}
           />
           <Divider orientation="vertical" flexItem />
@@ -48,7 +48,7 @@ export const ZoomControls = () => {
           <IconButton
             name="Zoom out"
             Icon={<ZoomInIcon />}
-            onClick={uiStateStoreActions.incrementZoom}
+            onClick={uiStateActions.incrementZoom}
             disabled={zoom <= MIN_ZOOM}
           />
         </Stack>

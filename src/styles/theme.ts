@@ -94,6 +94,11 @@ export const themeConfig: ThemeOptions = {
       defaultProps: {
         disableRipple: true,
         disableTouchRipple: true
+      },
+      styleOverrides: {
+        root: {
+          textAlign: 'left'
+        }
       }
     },
     MuiButton: {

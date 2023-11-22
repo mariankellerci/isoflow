@@ -1,4 +1,4 @@
-import { model as modelFixture } from 'src/fixtures/model';
+import { model as modelFixture } from 'src/schemas/tests/fixtures/model';
 import { ModelItem } from 'src/types';
 import { getItemByIdOrThrow } from 'src/utils';
 import {

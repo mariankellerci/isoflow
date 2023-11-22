@@ -5,7 +5,7 @@ import { EditorModeEnum } from 'src/types';
 import { UiElement } from 'components/UiElement/UiElement';
 import { SceneLayer } from 'src/components/SceneLayer/SceneLayer';
 import { DragAndDrop } from 'src/components/DragAndDrop/DragAndDrop';
-import { ItemControlsManager } from 'src/components/ItemControls/ItemControlsManager';
+import { ItemControlsManager } from 'src/components/Controls/ItemControlsManager';
 import { ToolMenu } from 'src/components/ToolMenu/ToolMenu';
 import { useUiStateStore } from 'src/stores/uiStateStore';
 import { MainMenu } from 'src/components/MainMenu/MainMenu';
@@ -223,6 +223,12 @@ export const UiOverlay = () => {
       {mode.type === 'PLACE_ICON' && mode.id && (
         <SceneLayer disableAnimation>
           <DragAndDrop iconId={mode.id} tile={mouse.position.tile} />
+        </SceneLayer>
+      )}
+
+      {mode.type === 'PLACE_ITEM' && mode.iconId && (
+        <SceneLayer disableAnimation>
+          <DragAndDrop iconId={mode.iconId} tile={mouse.position.tile} />
         </SceneLayer>
       )}
 

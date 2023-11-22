@@ -11,6 +11,7 @@ import {
   Colors
 } from 'src/types';
 import { CoordsUtils } from 'src/utils';
+import { modelDefaults } from 'src/schemas/defaults';
 import { customVars } from './styles/theme';
 
 // TODO: This file could do with better organisation and convention for easier reading.
@@ -41,7 +42,9 @@ export const VIEW_DEFAULTS: Required<
   textBoxes: []
 };
 
-export const VIEW_ITEM_DEFAULTS: Required<Omit<ViewItem, 'id' | 'tile'>> = {
+export const VIEW_ITEM_DEFAULTS: Required<
+  Omit<ViewItem, 'id' | 'modelItem' | 'tile'>
+> = {
   labelHeight: 80
 };
 
@@ -75,12 +78,7 @@ export const MAX_ZOOM = 1;
 export const TRANSFORM_ANCHOR_SIZE = 30;
 export const TRANSFORM_CONTROLS_COLOR = '#0392ff';
 export const INITIAL_DATA: InitialData = {
-  title: 'Untitled',
-  version: '',
-  icons: [],
-  colors: [DEFAULT_COLOR],
-  items: [],
-  views: [],
+  ...modelDefaults,
   fitToView: false
 };
 export const INITIAL_UI_STATE = {

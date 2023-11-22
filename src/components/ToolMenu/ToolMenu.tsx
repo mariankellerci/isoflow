@@ -20,7 +20,7 @@ export const ToolMenu = () => {
   const mode = useUiStateStore((state) => {
     return state.mode;
   });
-  const uiStateStoreActions = useUiStateStore((state) => {
+  const uiStateActions = useUiStateStore((state) => {
     return state.actions;
   });
   const mousePosition = useUiStateStore((state) => {
@@ -36,12 +36,12 @@ export const ToolMenu = () => {
       tile: mousePosition
     });
 
-    uiStateStoreActions.setMode({
+    uiStateActions.setMode({
       type: 'TEXTBOX',
       showCursor: false,
       id: textBoxId
     });
-  }, [uiStateStoreActions, createTextBox, mousePosition]);
+  }, [uiStateActions, createTextBox, mousePosition]);
 
   return (
     <UiElement>
@@ -50,7 +50,7 @@ export const ToolMenu = () => {
           name="Select"
           Icon={<NearMeIcon />}
           onClick={() => {
-            uiStateStoreActions.setMode({
+            uiStateActions.setMode({
               type: 'CURSOR',
               showCursor: true,
               mousedownItem: null
@@ -62,12 +62,12 @@ export const ToolMenu = () => {
           name="Pan"
           Icon={<PanToolIcon />}
           onClick={() => {
-            uiStateStoreActions.setMode({
+            uiStateActions.setMode({
               type: 'PAN',
               showCursor: false
             });
 
-            uiStateStoreActions.setItemControls(null);
+            uiStateActions.setItemControls(null);
           }}
           isActive={mode.type === 'PAN'}
         />
@@ -75,13 +75,8 @@ export const ToolMenu = () => {
           name="Add item"
           Icon={<AddIcon />}
           onClick={() => {
-            uiStateStoreActions.setItemControls({
+            uiStateActions.setItemControls({
               type: 'ADD_ITEM'
-            });
-            uiStateStoreActions.setMode({
-              type: 'PLACE_ICON',
-              showCursor: true,
-              id: null
             });
           }}
           isActive={mode.type === 'PLACE_ICON'}
@@ -90,7 +85,7 @@ export const ToolMenu = () => {
           name="Rectangle"
           Icon={<CropSquareIcon />}
           onClick={() => {
-            uiStateStoreActions.setMode({
+            uiStateActions.setMode({
               type: 'RECTANGLE.DRAW',
               showCursor: true,
               id: null
@@ -102,7 +97,7 @@ export const ToolMenu = () => {
           name="Connector"
           Icon={<ConnectorIcon />}
           onClick={() => {
-            uiStateStoreActions.setMode({
+            uiStateActions.setMode({
               type: 'CONNECTOR',
               id: null,
               showCursor: true

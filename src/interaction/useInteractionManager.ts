@@ -12,6 +12,7 @@ import { TransformRectangle } from './modes/Rectangle/TransformRectangle';
 import { Connector } from './modes/Connector';
 import { Pan } from './modes/Pan';
 import { PlaceIcon } from './modes/PlaceIcon';
+import { PlaceItem } from './modes/PlaceItem';
 import { TextBox } from './modes/TextBox';
 
 const modes: { [k in string]: ModeActions } = {
@@ -23,6 +24,7 @@ const modes: { [k in string]: ModeActions } = {
   CONNECTOR: Connector,
   PAN: Pan,
   PLACE_ICON: PlaceIcon,
+  PLACE_ITEM: PlaceItem,
   TEXTBOX: TextBox
 };
 

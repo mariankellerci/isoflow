@@ -20,9 +20,10 @@
 
 ## Key Features
 
-- **Highly visual drag and drop interface:** Express your architecture with icons, regions and connectors.
-- **Customizable:** Easily extend Isoflow with your own icons.
-- **Export options:** Export diagrams as code or images.
+- **Drag-and-drop editor:** Sketch your architecture with icons, regions and connectors.
+- **Customizable:** Customize Isoflow with your own icons and colours.
+- **Export options:** Export diagrams as JSON or PNG.
+- **Built-in migration tools:** Migrate older diagrams to newer versions of Isoflow.
 
 ## Roadmap
 

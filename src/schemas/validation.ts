@@ -253,7 +253,7 @@ export const validateView = (view: View, ctx: { model: Model }): Issue[] => {
 
   view.items.forEach((viewItem) => {
     try {
-      getItemByIdOrThrow(ctx.model.items, viewItem.id);
+      getItemByIdOrThrow(ctx.model.items, viewItem.modelItem);
     } catch (e) {
       issues.push({
         type: 'INVALID_VIEW_ITEM_TO_MODEL_ITEM_REF',

@@ -6,6 +6,7 @@ import { textBoxSchema } from './textBox';
 
 export const viewItemSchema = z.object({
   id,
+  modelItem: id,
   tile: coords,
   labelHeight: z.number().optional()
 });

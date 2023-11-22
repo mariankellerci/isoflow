@@ -1,5 +1,5 @@
+import { Icon } from 'src/schemas/types';
 import { Coords, EditorModeEnum, MainMenuOptions } from './common';
-import { Icon } from './model';
 import { ItemReference } from './scene';
 
 interface AddItemControls {
@@ -53,6 +53,13 @@ export interface PlaceIconMode {
   id: string | null;
 }
 
+export interface PlaceItemMode {
+  type: 'PLACE_ITEM';
+  showCursor: boolean;
+  id: string | null;
+  iconId: string | null;
+}
+
 export interface ConnectorMode {
   type: 'CONNECTOR';
   showCursor: boolean;
@@ -92,6 +99,7 @@ export type Mode =
   | CursorMode
   | PanMode
   | PlaceIconMode
+  | PlaceItemMode
   | ConnectorMode
   | DrawRectangleMode
   | TransformRectangleMode
