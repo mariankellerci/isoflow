@@ -35,8 +35,8 @@ export const Library = () => {
   return (
     <>
       <Alert severity="info">
-        Make multiple instances of a node from here. All instances will be
-        linked to the template.
+        Use the same node multiple times. All instances will be linked to the
+        template, so updating one, updates them all.
       </Alert>
       <Section>
         <Stack spacing={2}>
