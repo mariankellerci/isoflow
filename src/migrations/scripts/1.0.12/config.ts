@@ -57,7 +57,6 @@ export const config: MigrationConfig = {
   version,
   migrateUp: (model: PrevModel): Model => {
     const views = model.views.map(migrateView);
-    console.dir(views, { depth: null });
 
     return { ...model, version, views };
   },
