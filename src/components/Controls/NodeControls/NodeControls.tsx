@@ -92,7 +92,7 @@ export const NodeControls = ({ id }: Props) => {
           key={viewItem.id}
           node={viewItem}
           onModelItemUpdated={(updates) => {
-            updateModelItem(viewItem.id, updates);
+            updateModelItem(viewItem.modelItem, updates);
           }}
           onViewItemUpdated={(updates) => {
             updateViewItem(viewItem.id, updates);
