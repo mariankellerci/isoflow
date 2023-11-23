@@ -30,31 +30,31 @@ describe('Model item reducers works correctly', () => {
   });
 
   test('Item is updated correctly', () => {
-    const nodeId = 'node1';
+    const modelItemId = 'modelItem1';
     const updates: Partial<ModelItem> = {
       name: 'test'
     };
 
-    const newState = updateModelItem(nodeId, updates, {
+    const newState = updateModelItem(modelItemId, updates, {
       model: modelFixture,
       scene
     });
 
-    const updatedItem = getItemByIdOrThrow(newState.model.items, nodeId);
+    const updatedItem = getItemByIdOrThrow(newState.model.items, modelItemId);
 
     expect(updatedItem.value.name).toBe(updates.name);
   });
 
   test('Item is deleted correctly', () => {
-    const nodeId = 'node1';
+    const modelItemId = 'modelItem1';
 
-    const newState = deleteModelItem(nodeId, {
+    const newState = deleteModelItem(modelItemId, {
       model: modelFixture,
       scene
     });
 
     const deletedItem = () => {
-      getItemByIdOrThrow(newState.model.items, nodeId);
+      getItemByIdOrThrow(newState.model.items, modelItemId);
     };
 
     expect(deletedItem).toThrow();

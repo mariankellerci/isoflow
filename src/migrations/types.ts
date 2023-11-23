@@ -1,9 +1,9 @@
-export type AnyModel = { [k: string]: any } & {
+export type AnyModel = Record<string, any> & {
   version?: string;
 };
 
 export type MigrationConfig = {
   version: string;
   test: <Model>(model: Model) => void;
-  migrateUp?: <PrevModel, NewModel>(model: PrevModel) => NewModel;
+  migrateUp?: (model: any) => any;
 };

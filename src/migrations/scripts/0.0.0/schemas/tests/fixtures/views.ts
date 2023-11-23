@@ -7,21 +7,21 @@ export const views: Model['views'] = [
     description: 'View1Description',
     items: [
       {
-        id: 'node1',
+        id: 'modelItem1',
         tile: {
           x: 0,
           y: 0
         }
       },
       {
-        id: 'node2',
+        id: 'modelItem2',
         tile: {
           x: 0,
           y: 4
         }
       },
       {
-        id: 'node3',
+        id: 'modelItem3',
         tile: {
           x: 0,
           y: -4
@@ -46,15 +46,15 @@ export const views: Model['views'] = [
         id: 'connector1',
         color: 'color1',
         anchors: [
-          { id: 'anch1-1', ref: { item: 'node1' } },
-          { id: 'anch1-2', ref: { item: 'node2' } }
+          { id: 'anch1-1', ref: { item: 'modelItem1' } },
+          { id: 'anch1-2', ref: { item: 'modelItem2' } }
         ]
       },
       {
         id: 'connector2',
         anchors: [
-          { id: 'anch2-1', ref: { item: 'node2' } },
-          { id: 'anch2-2', ref: { item: 'node3' } }
+          { id: 'anch2-1', ref: { item: 'modelItem2' } },
+          { id: 'anch2-2', ref: { item: 'modelItem3' } }
         ]
       }
     ]

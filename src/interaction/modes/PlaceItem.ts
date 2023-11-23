@@ -1,6 +1,6 @@
 import { produce } from 'immer';
 import { ModeActions } from 'src/types';
-import { getItemAtTile } from 'src/utils';
+import { getItemAtTile, generateId } from 'src/utils';
 import { VIEW_ITEM_DEFAULTS } from 'src/config';
 
 export const PlaceItem: ModeActions = {
@@ -27,9 +27,12 @@ export const PlaceItem: ModeActions = {
     if (uiState.mode.type !== 'PLACE_ITEM') return;
 
     if (uiState.mode.id !== null) {
+      const viewItemId = generateId();
+
       scene.createViewItem({
         ...VIEW_ITEM_DEFAULTS,
-        id: uiState.mode.id,
+        id: viewItemId,
+        modelItem: uiState.mode.id,
         tile: uiState.mouse.position.tile
       });
     }

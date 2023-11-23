@@ -27,6 +27,7 @@ export const PlaceIcon: ModeActions = {
     if (uiState.mode.type !== 'PLACE_ICON') return;
 
     if (uiState.mode.id !== null) {
+      const viewItemId = generateId();
       const modelItemId = generateId();
 
       scene.createModelItem({
@@ -37,7 +38,8 @@ export const PlaceIcon: ModeActions = {
 
       scene.createViewItem({
         ...VIEW_ITEM_DEFAULTS,
-        id: modelItemId,
+        id: viewItemId,
+        modelItem: modelItemId,
         tile: uiState.mouse.position.tile
       });
     }

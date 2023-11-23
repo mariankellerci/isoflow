@@ -1,6 +1,4 @@
-import { Color } from './types';
-
-export const defaultColor: Color = {
+export const defaultColor = {
   id: '__DEFAULT__',
   value: '#a5b8f3'
 };

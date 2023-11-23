@@ -1,5 +1,5 @@
 import { useCallback, useState, useRef } from 'react';
-import { InitialData, IconCollectionState } from 'src/types';
+import { InitialData, IconCollectionState, Model } from 'src/types';
 import { INITIAL_DATA, INITIAL_SCENE_STATE } from 'src/config';
 import {
   getFitToViewParams,
@@ -12,7 +12,7 @@ import * as reducers from 'src/stores/reducers';
 import { useModelStore } from 'src/stores/modelStore';
 import { useView } from 'src/hooks/useView';
 import { useUiStateStore } from 'src/stores/uiStateStore';
-import { modelSchema } from 'src/schemas/model';
+import { migrateModel } from 'src/migrations/migrationUtils';
 
 export const useInitialDataManager = () => {
   const [isReady, setIsReady] = useState(false);
@@ -34,17 +34,19 @@ export const useInitialDataManager = () => {
 
       setIsReady(false);
 
-      const validationResult = modelSchema.safeParse(_initialData);
+      let validatedModel: Model;
 
-      if (!validationResult.success) {
+      try {
+        validatedModel = migrateModel(_initialData);
+      } catch (e) {
         // TODO: let's get better at reporting error messages here (starting with how we present them to users)
         // - not in console but in a modal
-        console.log(validationResult.error.errors);
-        window.alert('There is an error in your model.');
+        console.log(e);
+        // window.alert('There is an error in your model.');
         return;
       }
 
-      const initialData = _initialData;
+      const initialData = { ..._initialData, ...validatedModel };
 
       if (initialData.views.length === 0) {
         const updates = reducers.view({

@@ -2,19 +2,19 @@ import { Model } from '../../types';
 
 export const modelItems: Model['items'] = [
   {
-    id: 'node1',
-    name: 'Node1',
+    id: 'modelItem1',
+    name: 'ModelItem1',
     icon: 'icon1',
     description: 'Node1Description'
   },
   {
-    id: 'node2',
-    name: 'Node2',
+    id: 'modelItem2',
+    name: 'ModelItem2',
     icon: 'icon2'
   },
   {
-    id: 'node3',
-    name: 'Node3',
+    id: 'modelItem3',
+    name: 'ModelItem3',
     icon: 'icon1'
   }
 ];

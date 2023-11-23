@@ -1,3 +1,4 @@
+import { getAllAnchors, getItemByIdOrThrow } from 'src/utils';
 import type {
   Model,
   ModelItem,
@@ -5,8 +6,7 @@ import type {
   ConnectorAnchor,
   View,
   Rectangle
-} from 'src/types';
-import { getAllAnchors, getItemByIdOrThrow } from 'src/utils';
+} from './types';
 
 type IssueType =
   | {

@@ -15,9 +15,9 @@ import {
   textBoxSchema,
   rectangleSchema,
   connectorStyleOptions
-} from 'src/schemas';
+} from '.';
 
-export { connectorStyleOptions } from 'src/schemas';
+export { connectorStyleOptions } from '.';
 export type Model = z.infer<typeof modelSchema>;
 export type ModelItems = z.infer<typeof modelItemsSchema>;
 export type Icon = z.infer<typeof iconSchema>;

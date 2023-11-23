@@ -66,7 +66,8 @@ describe('Model validation works correctly', () => {
 
   test('An invalid view item fails validation', () => {
     const invalidItem: ViewItem = {
-      id: 'invalidItem',
+      id: 'invalidViewItem',
+      modelItem: 'invalidModelItem',
       tile: {
         x: 0,
         y: 0

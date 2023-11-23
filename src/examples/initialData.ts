@@ -49,6 +49,7 @@ export const colors: Colors = [
 export const icons: Icons = isopacks;
 
 export const initialData: InitialData = {
+  version: '1.0.12',
   title: 'Airport management software system',
   icons,
   colors,
@@ -200,105 +201,130 @@ export const initialData: InitialData = {
       items: [
         {
           labelHeight: 80,
-          id: 'd917b7d7-a5c4-479e-a366-da8d22ea8ebb',
-          tile: { x: 5, y: -11 }
+          id: '72a5ccd3-a6ce-425d-8393-f3017c75bed2',
+          tile: { x: 5, y: -11 },
+          modelItem: 'd917b7d7-a5c4-479e-a366-da8d22ea8ebb'
         },
         {
           labelHeight: 80,
-          id: 'afa7b887-8aff-45a6-86fa-7a896626e920',
-          tile: { x: 2, y: -11 }
+          id: '02817fc0-64a0-4060-9479-79bf2f038be5',
+          tile: { x: 2, y: -11 },
+          modelItem: 'afa7b887-8aff-45a6-86fa-7a896626e920'
         },
         {
           labelHeight: 80,
-          id: 'b46088d6-7bd4-4ccf-9d35-cf56a891d869',
-          tile: { x: 4, y: -7 }
+          id: 'a8f29ae3-3f48-4590-8eb1-1642cff1da98',
+          tile: { x: 4, y: -7 },
+          modelItem: 'b46088d6-7bd4-4ccf-9d35-cf56a891d869'
         },
         {
           labelHeight: 80,
-          id: '2db4a232-2cf3-4277-9cd4-e2c0a35a4eac',
-          tile: { x: 16, y: -3 }
+          id: '982aa956-ada3-452b-a55d-164c1c98d8db',
+          tile: { x: 16, y: -3 },
+          modelItem: '2db4a232-2cf3-4277-9cd4-e2c0a35a4eac'
         },
         {
           labelHeight: 80,
-          id: '9172d115-93ae-4e89-bd75-4979b7f8a49a',
-          tile: { x: 16, y: 0 }
+          id: '474f9d78-d1e1-4e66-846b-9c3431a65ee3',
+          tile: { x: 16, y: 0 },
+          modelItem: '9172d115-93ae-4e89-bd75-4979b7f8a49a'
         },
         {
           labelHeight: 80,
-          id: '2ac34480-95cc-4b01-8efd-683ec46fcd68',
-          tile: { x: 16, y: 3 }
+          id: '36c9cad3-8491-40f5-892f-2283a5456de8',
+          tile: { x: 16, y: 3 },
+          modelItem: '2ac34480-95cc-4b01-8efd-683ec46fcd68'
         },
         {
           labelHeight: 80,
-          id: '24d4a8b3-6056-4c3f-8f0b-143683509438',
-          tile: { x: 11, y: 0 }
+          id: '6f37bc41-4d9b-44fb-a415-29fee0a5db64',
+          tile: { x: 11, y: 0 },
+          modelItem: '24d4a8b3-6056-4c3f-8f0b-143683509438'
         },
         {
           labelHeight: 80,
-          id: 'fe621de2-793b-42f9-968e-4cac33b8d5fe',
-          tile: { x: 7, y: 12 }
+          id: 'f2fbf43c-eb0a-4727-80b8-540f3bc01a7d',
+          tile: { x: 7, y: 12 },
+          modelItem: 'fe621de2-793b-42f9-968e-4cac33b8d5fe'
         },
         {
           labelHeight: 80,
-          id: '791abb72-5481-4713-88a8-a9fe51cb5408',
-          tile: { x: 4, y: 12 }
+          id: '741de740-f4c4-4fca-8cf3-ac9652952e3e',
+          tile: { x: 4, y: 12 },
+          modelItem: '791abb72-5481-4713-88a8-a9fe51cb5408'
         },
         {
           labelHeight: 80,
-          id: '00ff4dc0-09f9-4932-aa90-6c207da2989b',
-          tile: { x: 1, y: 12 }
+          id: 'e81be8b1-b16c-4908-9068-1c2fe54fba40',
+          tile: { x: 1, y: 12 },
+          modelItem: '00ff4dc0-09f9-4932-aa90-6c207da2989b'
         },
         {
           labelHeight: 80,
-          id: 'cf6b6e6e-f491-4547-b4ac-c5eecba8464a',
-          tile: { x: 4, y: 6 }
+          id: 'dca6d51e-f915-43e8-96c5-3100b62dbefb',
+          tile: { x: 4, y: 6 },
+          modelItem: 'cf6b6e6e-f491-4547-b4ac-c5eecba8464a'
         },
         {
           labelHeight: 80,
-          id: '67895813-ac6f-4dd4-9ae2-e994e9a5aa09',
-          tile: { x: -11, y: 8 }
+          id: '97152627-3f5c-4dc9-9879-6291d2c68971',
+          tile: { x: -11, y: 8 },
+          modelItem: '67895813-ac6f-4dd4-9ae2-e994e9a5aa09'
         },
         {
           labelHeight: 80,
-          id: 'a71d7911-261d-4b6e-895a-27765baf0403',
-          tile: { x: -8, y: 8 }
+          id: '64e73a9c-1826-4eb0-b51e-0e68082fdaf5',
+          tile: { x: -8, y: 8 },
+          modelItem: 'a71d7911-261d-4b6e-895a-27765baf0403'
         },
         {
           labelHeight: 80,
-          id: '040dfb11-f920-48cf-bf96-64234db1b7e8',
-          tile: { x: -5, y: 8 }
+          id: 'e4703eda-1ea4-4da9-95b1-414875c06f18',
+          tile: { x: -5, y: 8 },
+          modelItem: '040dfb11-f920-48cf-bf96-64234db1b7e8'
         },
         {
           labelHeight: 80,
-          id: 'a2d5f2c4-ea64-4b3c-8c82-d50be88adb05',
-          tile: { x: -5, y: 4 }
+          id: '47a89a93-8f6a-4d8d-a559-e8cd332bc50a',
+          tile: { x: -5, y: 4 },
+          modelItem: 'a2d5f2c4-ea64-4b3c-8c82-d50be88adb05'
         },
         {
           labelHeight: 80,
-          id: 'c54ab120-44d2-46d2-9fc1-efd83ab67307',
-          tile: { x: -11, y: -9 }
+          id: '0108c5a7-4165-4b45-b289-5cb5a0e713d5',
+          tile: { x: -11, y: -9 },
+          modelItem: 'c54ab120-44d2-46d2-9fc1-efd83ab67307'
         },
         {
           labelHeight: 80,
-          id: '4a27ed88-abf2-448b-af07-5d2b6ebdb67f',
-          tile: { x: -8, y: -9 }
+          id: '00bdc689-a59b-4a5f-aeb4-c77c0bbaf038',
+          tile: { x: -8, y: -9 },
+          modelItem: '4a27ed88-abf2-448b-af07-5d2b6ebdb67f'
         },
         {
           labelHeight: 80,
-          id: 'a147b06a-324a-47ab-9e16-ac9101aa3d28',
-          tile: { x: -5, y: -9 }
+          id: '62734811-2083-4ec1-b06b-8ce261acc373',
+          tile: { x: -5, y: -9 },
+          modelItem: 'a147b06a-324a-47ab-9e16-ac9101aa3d28'
         },
         {
           labelHeight: 180,
-          id: 'e0462e01-8acd-461c-89a2-42c6a04d5f7f',
-          tile: { x: -5, y: -4 }
+          id: 'fa902e5c-9026-44db-ab0c-e06bf9845987',
+          tile: { x: -5, y: -4 },
+          modelItem: 'e0462e01-8acd-461c-89a2-42c6a04d5f7f'
         },
         {
           labelHeight: 180,
-          id: 'bc6fdded-a090-4eae-b1fe-fe0ee0fd1c92',
-          tile: { x: -4, y: 0 }
+          id: '40465f9b-6bec-4d83-8a6f-359921793339',
+          tile: { x: -4, y: 0 },
+          modelItem: 'bc6fdded-a090-4eae-b1fe-fe0ee0fd1c92'
         },
-        { id: 'item1', tile: { x: 4, y: 0 }, labelHeight: 140 }
+        {
+          id: '2dd7d72b-89f3-4d7e-b9ea-a81c80ba1d88',
+          tile: { x: 4, y: 0 },
+          labelHeight: 140,
+          modelItem: 'item1'
+        }
       ],
       connectors: [
         {
@@ -307,7 +333,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'abe857f8-6219-4030-b5cf-6a7de2bff9be',
-              ref: { item: 'd917b7d7-a5c4-479e-a366-da8d22ea8ebb' }
+              ref: { item: '72a5ccd3-a6ce-425d-8393-f3017c75bed2' }
             },
             {
               id: '21b9d415-1429-4e68-9b35-46705c32e8a4',
@@ -319,7 +345,7 @@ export const initialData: InitialData = {
             },
             {
               id: 'c9d4b849-a044-4c43-9e8a-ec370cac7dd6',
-              ref: { item: 'b46088d6-7bd4-4ccf-9d35-cf56a891d869' }
+              ref: { item: 'a8f29ae3-3f48-4590-8eb1-1642cff1da98' }
             }
           ],
           width: 10,
@@ -332,7 +358,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'aed7740d-75e5-471e-a9a0-01bbfb751a2c',
-              ref: { item: 'afa7b887-8aff-45a6-86fa-7a896626e920' }
+              ref: { item: '02817fc0-64a0-4060-9479-79bf2f038be5' }
             },
             {
               id: 'eccb2e42-64cd-446c-a23a-74b8f759fdd1',
@@ -344,7 +370,7 @@ export const initialData: InitialData = {
             },
             {
               id: 'c6fa8a43-722a-49a9-84f4-b76114322b0d',
-              ref: { item: 'b46088d6-7bd4-4ccf-9d35-cf56a891d869' }
+              ref: { item: 'a8f29ae3-3f48-4590-8eb1-1642cff1da98' }
             }
           ],
           width: 10,
@@ -357,11 +383,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '24f16db1-6a3c-44b4-978d-6aa66f0b049f',
-              ref: { item: 'b46088d6-7bd4-4ccf-9d35-cf56a891d869' }
+              ref: { item: 'a8f29ae3-3f48-4590-8eb1-1642cff1da98' }
             },
             {
               id: '034ffa18-b55b-4941-acd8-02dbd8c47bfb',
-              ref: { item: 'item1' }
+              ref: { item: '2dd7d72b-89f3-4d7e-b9ea-a81c80ba1d88' }
             }
           ]
         },
@@ -371,7 +397,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '39a462b8-bc96-490b-849a-1199e44cfa8a',
-              ref: { item: '2db4a232-2cf3-4277-9cd4-e2c0a35a4eac' }
+              ref: { item: '982aa956-ada3-452b-a55d-164c1c98d8db' }
             },
             {
               id: 'f4d0339b-45c8-4eb7-a3be-94616a4969a5',
@@ -383,7 +409,7 @@ export const initialData: InitialData = {
             },
             {
               id: '072adfbc-9888-434a-bae4-9639fff026a4',
-              ref: { item: '24d4a8b3-6056-4c3f-8f0b-143683509438' }
+              ref: { item: '6f37bc41-4d9b-44fb-a415-29fee0a5db64' }
             }
           ],
           width: 10,
@@ -396,11 +422,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '2410836d-4820-4492-8c64-d89b069ce9ec',
-              ref: { item: '9172d115-93ae-4e89-bd75-4979b7f8a49a' }
+              ref: { item: '474f9d78-d1e1-4e66-846b-9c3431a65ee3' }
             },
             {
               id: 'f583f42d-2eec-47a5-9d45-6dfd0603cb69',
-              ref: { item: '24d4a8b3-6056-4c3f-8f0b-143683509438' }
+              ref: { item: '6f37bc41-4d9b-44fb-a415-29fee0a5db64' }
             }
           ]
         },
@@ -410,7 +436,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '66854e7d-e46c-49b0-8f26-186742369158',
-              ref: { item: '2ac34480-95cc-4b01-8efd-683ec46fcd68' }
+              ref: { item: '36c9cad3-8491-40f5-892f-2283a5456de8' }
             },
             {
               id: 'ffc7345f-854c-41ef-96ed-fd1cbeb4b3d6',
@@ -422,7 +448,7 @@ export const initialData: InitialData = {
             },
             {
               id: 'd97de77f-ac92-42a9-892b-3e30485817ff',
-              ref: { item: '24d4a8b3-6056-4c3f-8f0b-143683509438' }
+              ref: { item: '6f37bc41-4d9b-44fb-a415-29fee0a5db64' }
             }
           ],
           width: 10,
@@ -435,11 +461,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'bd8d118a-f676-4ca0-bfbd-b993625aece7',
-              ref: { item: '24d4a8b3-6056-4c3f-8f0b-143683509438' }
+              ref: { item: '6f37bc41-4d9b-44fb-a415-29fee0a5db64' }
             },
             {
               id: '613866b0-e6dd-4d8a-9a67-d8ce443273ec',
-              ref: { item: 'item1' }
+              ref: { item: '2dd7d72b-89f3-4d7e-b9ea-a81c80ba1d88' }
             }
           ]
         },
@@ -449,7 +475,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'dd31d564-3b3a-4428-b05c-88b243173d21',
-              ref: { item: 'fe621de2-793b-42f9-968e-4cac33b8d5fe' }
+              ref: { item: 'f2fbf43c-eb0a-4727-80b8-540f3bc01a7d' }
             },
             {
               id: '8b9dec3b-59e3-4ddf-9a2b-12e7e6092916',
@@ -461,7 +487,7 @@ export const initialData: InitialData = {
             },
             {
               id: '3678c2f1-4c13-4959-8aaf-8d27611b6ea7',
-              ref: { item: 'cf6b6e6e-f491-4547-b4ac-c5eecba8464a' }
+              ref: { item: 'dca6d51e-f915-43e8-96c5-3100b62dbefb' }
             }
           ],
           width: 10,
@@ -474,11 +500,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '30064e8e-7894-4b83-833b-a171c10327e6',
-              ref: { item: '791abb72-5481-4713-88a8-a9fe51cb5408' }
+              ref: { item: '741de740-f4c4-4fca-8cf3-ac9652952e3e' }
             },
             {
               id: 'b5aabbda-2802-4cf8-90c2-adfbc5bc5b5c',
-              ref: { item: 'cf6b6e6e-f491-4547-b4ac-c5eecba8464a' }
+              ref: { item: 'dca6d51e-f915-43e8-96c5-3100b62dbefb' }
             }
           ]
         },
@@ -488,7 +514,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'e8e8c135-3852-4475-96bc-6d6ec3eef8f0',
-              ref: { item: '00ff4dc0-09f9-4932-aa90-6c207da2989b' }
+              ref: { item: 'e81be8b1-b16c-4908-9068-1c2fe54fba40' }
             },
             {
               id: '56b0d80b-31b5-4960-bf01-47c2d2a9e90a',
@@ -500,7 +526,7 @@ export const initialData: InitialData = {
             },
             {
               id: 'c858062e-faa9-410d-9a35-5090c3b42af5',
-              ref: { item: 'cf6b6e6e-f491-4547-b4ac-c5eecba8464a' }
+              ref: { item: 'dca6d51e-f915-43e8-96c5-3100b62dbefb' }
             }
           ],
           width: 10,
@@ -513,11 +539,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'c258cf27-4d97-4814-8438-96c7f9fa50c0',
-              ref: { item: 'cf6b6e6e-f491-4547-b4ac-c5eecba8464a' }
+              ref: { item: 'dca6d51e-f915-43e8-96c5-3100b62dbefb' }
             },
             {
               id: '3bdd5f99-0fc8-4b35-b2be-fa5473a51bfa',
-              ref: { item: 'item1' }
+              ref: { item: '2dd7d72b-89f3-4d7e-b9ea-a81c80ba1d88' }
             }
           ]
         },
@@ -527,11 +553,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '3d0c51d0-0b90-4062-90e5-306e2aa2f633',
-              ref: { item: '040dfb11-f920-48cf-bf96-64234db1b7e8' }
+              ref: { item: 'e4703eda-1ea4-4da9-95b1-414875c06f18' }
             },
             {
               id: '46d83bb9-30a5-4856-afb2-0e91076fce62',
-              ref: { item: 'a2d5f2c4-ea64-4b3c-8c82-d50be88adb05' }
+              ref: { item: '47a89a93-8f6a-4d8d-a559-e8cd332bc50a' }
             }
           ]
         },
@@ -541,7 +567,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'e031f407-88d7-4606-9d0d-99ffd12662d7',
-              ref: { item: 'a71d7911-261d-4b6e-895a-27765baf0403' }
+              ref: { item: '64e73a9c-1826-4eb0-b51e-0e68082fdaf5' }
             },
             {
               id: '6bffb346-eb7e-45b7-a68f-23b49eed30c2',
@@ -553,7 +579,7 @@ export const initialData: InitialData = {
             },
             {
               id: '4992ecf1-26bc-47bf-a781-4e5267cd0c02',
-              ref: { item: 'a2d5f2c4-ea64-4b3c-8c82-d50be88adb05' }
+              ref: { item: '47a89a93-8f6a-4d8d-a559-e8cd332bc50a' }
             }
           ],
           width: 10,
@@ -566,7 +592,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '760ef8a7-b619-41bc-a61f-3d63fa1c2879',
-              ref: { item: '67895813-ac6f-4dd4-9ae2-e994e9a5aa09' }
+              ref: { item: '97152627-3f5c-4dc9-9879-6291d2c68971' }
             },
             {
               id: 'd03b1bea-d63f-4960-b186-ccc582a0da1b',
@@ -578,7 +604,7 @@ export const initialData: InitialData = {
             },
             {
               id: 'bc60ae76-c0f1-4c7f-8ec1-acdec06a9250',
-              ref: { item: 'a2d5f2c4-ea64-4b3c-8c82-d50be88adb05' }
+              ref: { item: '47a89a93-8f6a-4d8d-a559-e8cd332bc50a' }
             }
           ],
           width: 10,
@@ -591,11 +617,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'cb98ae3b-f88d-45ab-9dd8-0ced127e0ee1',
-              ref: { item: 'a2d5f2c4-ea64-4b3c-8c82-d50be88adb05' }
+              ref: { item: '47a89a93-8f6a-4d8d-a559-e8cd332bc50a' }
             },
             {
               id: '8a9f4c57-0685-4624-bf30-f5b27f34662a',
-              ref: { item: 'bc6fdded-a090-4eae-b1fe-fe0ee0fd1c92' }
+              ref: { item: '40465f9b-6bec-4d83-8a6f-359921793339' }
             }
           ]
         },
@@ -605,7 +631,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '4072b959-8f00-4cef-9888-98b6faa5671b',
-              ref: { item: 'c54ab120-44d2-46d2-9fc1-efd83ab67307' }
+              ref: { item: '0108c5a7-4165-4b45-b289-5cb5a0e713d5' }
             },
             {
               id: '020bc704-e25f-4a3a-a613-6fb7ce800f7e',
@@ -617,7 +643,7 @@ export const initialData: InitialData = {
             },
             {
               id: '237f901a-d01d-4d9b-8bd1-eb11efedaa1b',
-              ref: { item: 'e0462e01-8acd-461c-89a2-42c6a04d5f7f' }
+              ref: { item: 'fa902e5c-9026-44db-ab0c-e06bf9845987' }
             }
           ],
           width: 10,
@@ -630,7 +656,7 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'b2db4f0d-59e7-4715-9d28-ea43887ae8c8',
-              ref: { item: '4a27ed88-abf2-448b-af07-5d2b6ebdb67f' }
+              ref: { item: '00bdc689-a59b-4a5f-aeb4-c77c0bbaf038' }
             },
             {
               id: 'e742a2df-8911-40d8-9227-3d5f391f3beb',
@@ -642,7 +668,7 @@ export const initialData: InitialData = {
             },
             {
               id: '03cb17bd-34cb-4c80-989d-f299aa1a2915',
-              ref: { item: 'e0462e01-8acd-461c-89a2-42c6a04d5f7f' }
+              ref: { item: 'fa902e5c-9026-44db-ab0c-e06bf9845987' }
             }
           ],
           width: 10,
@@ -655,11 +681,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '433e4f1f-0bf9-44f5-ab9f-d98861206b59',
-              ref: { item: 'a147b06a-324a-47ab-9e16-ac9101aa3d28' }
+              ref: { item: '62734811-2083-4ec1-b06b-8ce261acc373' }
             },
             {
               id: '1affa818-d601-4ab3-b507-d71ece11920c',
-              ref: { item: 'e0462e01-8acd-461c-89a2-42c6a04d5f7f' }
+              ref: { item: 'fa902e5c-9026-44db-ab0c-e06bf9845987' }
             }
           ]
         },
@@ -669,11 +695,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: 'aa663458-6df7-4bb2-946b-c8cc6ab29957',
-              ref: { item: 'e0462e01-8acd-461c-89a2-42c6a04d5f7f' }
+              ref: { item: 'fa902e5c-9026-44db-ab0c-e06bf9845987' }
             },
             {
               id: '77530d07-6183-420c-affe-91a99b685db0',
-              ref: { item: 'bc6fdded-a090-4eae-b1fe-fe0ee0fd1c92' }
+              ref: { item: '40465f9b-6bec-4d83-8a6f-359921793339' }
             }
           ]
         },
@@ -683,11 +709,11 @@ export const initialData: InitialData = {
           anchors: [
             {
               id: '5870d75a-066c-422e-a517-c44417961809',
-              ref: { item: 'bc6fdded-a090-4eae-b1fe-fe0ee0fd1c92' }
+              ref: { item: '40465f9b-6bec-4d83-8a6f-359921793339' }
             },
             {
               id: '0fdeeb60-9820-41dc-a73b-96196e035331',
-              ref: { item: 'item1' }
+              ref: { item: '2dd7d72b-89f3-4d7e-b9ea-a81c80ba1d88' }
             }
           ]
         }
