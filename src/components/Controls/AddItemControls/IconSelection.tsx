@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { useCallback } from 'react';
 import { Alert } from '@mui/material';
 import { useIconFiltering } from 'src/hooks/useIconFiltering';
 import { useUiStateStore } from 'src/stores/uiStateStore';

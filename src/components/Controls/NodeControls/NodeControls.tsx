@@ -108,7 +108,7 @@ export const NodeControls = ({ id }: Props) => {
           key={viewItem.id}
           iconCategories={iconCategories}
           onClick={(_icon) => {
-            updateModelItem(viewItem.id, { icon: _icon.id });
+            updateModelItem(viewItem.modelItem, { icon: _icon.id });
           }}
         />
       )}

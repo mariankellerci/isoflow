@@ -34,7 +34,10 @@ export const Library = () => {
 
   return (
     <>
-      <Alert severity="info">Find an item template here.</Alert>
+      <Alert severity="info">
+        Make multiple instances of a node from here. All instances will be
+        linked to the template.
+      </Alert>
       <Section>
         <Stack spacing={2}>
           {items.map((item) => {

@@ -63,7 +63,7 @@ export const AddItemControls = () => {
               }}
             >
               <MuiTab value={tabs.ICONS} label="Icons" />
-              <MuiTab value={tabs.ITEM_LIBRARY} label="Item library" />
+              <MuiTab value={tabs.ITEM_LIBRARY} label="Templates" />
             </Tabs>
           </Stack>
         </Section>
