@@ -40,6 +40,7 @@ export const PlaceItem: ModeActions = {
     uiState.actions.setMode(
       produce(uiState.mode, (draft) => {
         draft.id = null;
+        draft.iconId = null;
       })
     );
   }

@@ -110,7 +110,8 @@ export const themeConfig: ThemeOptions = {
       },
       styleOverrides: {
         root: {
-          textTransform: 'none'
+          textTransform: 'none',
+          textAlign: 'center'
         }
       }
     },

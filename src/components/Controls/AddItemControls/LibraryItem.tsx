@@ -14,14 +14,19 @@ export const LibraryItem = ({ id, onMouseDown }: Props) => {
 
   return (
     <ButtonBase
-      sx={{ width: '100%' }}
+      sx={{ width: '100%', userSelect: 'none' }}
       onMouseDown={() => {
         onMouseDown(modelItem.id, icon.id);
       }}
     >
       <Card sx={{ p: 2, width: '100%' }}>
         <Stack direction="row" alignItems="center" spacing={2}>
-          <Box sx={{ width: 40, height: 40 }} component="img" src={icon.url} />
+          <Box
+            sx={{ width: 40, height: 40 }}
+            component="img"
+            draggable={false}
+            src={icon.url}
+          />
           <Typography>{modelItem.name}</Typography>
         </Stack>
       </Card>
