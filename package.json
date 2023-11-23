@@ -4,6 +4,7 @@
   "private": false,
   "description": "An open-source React component for drawing network diagrams.",
   "license": "MIT",
+  "author": "Mark Mankarious <mz.mankarious@gmail.com>",
   "repository": {
     "type": "git",
     "url": "https://github.com/markmanx/isoflow.git"
