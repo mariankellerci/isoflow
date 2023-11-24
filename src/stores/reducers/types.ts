@@ -58,10 +58,6 @@ type ViewReducerAction =
       payload: Parameters<typeof connectorReducers.deleteConnector>[0];
     }
   | {
-      action: 'SYNC_CONNECTOR';
-      payload: Parameters<typeof connectorReducers.syncConnector>[0];
-    }
-  | {
       action: 'CREATE_TEXTBOX';
       payload: Parameters<typeof textBoxReducers.createTextBox>[0];
     }

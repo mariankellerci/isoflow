@@ -114,9 +114,6 @@ export const view = ({ action, payload, ctx }: ViewReducerParams) => {
     case 'UPDATE_CONNECTOR':
       newState = connectorReducers.updateConnector(payload, ctx);
       break;
-    case 'SYNC_CONNECTOR':
-      newState = connectorReducers.syncConnector(payload, ctx);
-      break;
     case 'DELETE_CONNECTOR':
       newState = connectorReducers.deleteConnector(payload, ctx);
       break;
