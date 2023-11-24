@@ -54,33 +54,32 @@ export const useInteractionManager = () => {
   const { size: rendererSize } = useResizeObserver(uiState.rendererEl);
 
   useEffect(() => {
-    if (!rendererRef.current) return;
+    if (!rendererRef.current || reducerTypeRef.current === uiState.mode.type)
+      return;
 
-    if (reducerTypeRef.current !== uiState.mode.type) {
-      const mode = modes[uiState.mode.type];
-      const prevReducer = reducerTypeRef.current
-        ? modes[reducerTypeRef.current]
-        : null;
+    const mode = modes[uiState.mode.type];
+    const prevReducer = reducerTypeRef.current
+      ? modes[reducerTypeRef.current]
+      : null;
 
-      const baseState = {
-        model,
-        scene,
-        uiState,
-        rendererSize,
-        isRendererInteraction: true,
-        rendererRef: rendererRef.current
-      };
+    const baseState = {
+      model,
+      scene,
+      uiState,
+      rendererSize,
+      isRendererInteraction: true,
+      rendererRef: rendererRef.current
+    };
 
-      if (prevReducer && prevReducer.exit) {
-        prevReducer.exit(baseState);
-      }
-
-      if (mode.entry) {
-        mode.entry(baseState);
-      }
-
-      reducerTypeRef.current = uiState.mode.type;
+    if (prevReducer && prevReducer.exit) {
+      prevReducer.exit(baseState);
     }
+
+    if (mode.entry) {
+      mode.entry(baseState);
+    }
+
+    reducerTypeRef.current = uiState.mode.type;
   }, [model, scene, uiState, rendererSize]);
 
   const onMouseEvent = useCallback(
