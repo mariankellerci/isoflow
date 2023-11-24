@@ -28,7 +28,7 @@ export const LibraryItem = ({ id, onMouseDown }: Props) => {
     >
       <Card
         sx={{
-          p: 2,
+          p: 1.5,
           width: '100%',
           borderLeft: '6px solid',
           borderLeftColor: 'grey.300'
