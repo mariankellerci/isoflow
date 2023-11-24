@@ -6,9 +6,9 @@ import { VIEW_ITEM_DEFAULTS } from 'src/config';
 export const PlaceIcon: ModeActions = {
   mousemove: () => {},
   mousedown: ({ uiState, scene, isRendererInteraction }) => {
-    if (uiState.mode.type !== 'PLACE_ICON' || !isRendererInteraction) return;
+    if (uiState.mode.type !== 'PLACE_ICON') return;
 
-    if (!uiState.mode.id) {
+    if (isRendererInteraction && !uiState.mode.id) {
       const itemAtTile = getItemAtTile({
         tile: uiState.mouse.position.tile,
         scene
