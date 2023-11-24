@@ -79,7 +79,7 @@ export const ToolMenu = () => {
               type: 'ADD_ITEM'
             });
           }}
-          isActive={mode.type === 'PLACE_ICON'}
+          isActive={mode.type === 'PLACE_ICON' || mode.type === 'PLACE_ITEM'}
         />
         <IconButton
           name="Rectangle"

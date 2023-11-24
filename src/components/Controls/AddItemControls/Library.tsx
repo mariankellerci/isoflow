@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { Stack, Alert } from '@mui/material';
+import { Stack, Alert, Typography } from '@mui/material';
 import { useModelStore } from 'src/stores/modelStore';
 import { useUiStateStore } from 'src/stores/uiStateStore';
 import { Section } from '../components/Section';
@@ -35,11 +35,16 @@ export const Library = () => {
   return (
     <>
       <Alert severity="info">
-        Use the same node multiple times. All instances will be linked to the
-        template, so updating one, updates them all.
+        Use the same node multiple times. All instances will be linked, so
+        updating one instance, updates them all.
       </Alert>
       <Section>
         <Stack spacing={2}>
+          {items.length === 0 && (
+            <Typography variant="body2">
+              No items found yet. Add some items to your view.
+            </Typography>
+          )}
           {items.map((item) => {
             return <LibraryItem id={item.id} onMouseDown={onMouseDown} />;
           })}
