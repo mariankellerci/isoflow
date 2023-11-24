@@ -14,12 +14,26 @@ export const LibraryItem = ({ id, onMouseDown }: Props) => {
 
   return (
     <ButtonBase
-      sx={{ width: '100%', userSelect: 'none' }}
+      sx={{
+        width: '100%',
+        userSelect: 'none',
+        '&:hover': {
+          boxShadow: 1,
+          cursor: 'grab'
+        }
+      }}
       onMouseDown={() => {
         onMouseDown(modelItem.id, icon.id);
       }}
     >
-      <Card sx={{ p: 2, width: '100%' }}>
+      <Card
+        sx={{
+          p: 2,
+          width: '100%',
+          borderLeft: '6px solid',
+          borderLeftColor: 'grey.400'
+        }}
+      >
         <Stack direction="row" alignItems="center" spacing={2}>
           <Box
             sx={{ width: 40, height: 40 }}

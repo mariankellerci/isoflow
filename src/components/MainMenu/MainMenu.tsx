@@ -179,7 +179,7 @@ export const MainMenu = () => {
                   }}
                   Icon={<QuestionAnswerIcon />}
                 >
-                  Discord
+                  Need help? Join our Discord
                 </MenuItem>
               )}
             </>
