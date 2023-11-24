@@ -23,18 +23,20 @@ export const PlaceItem: ModeActions = {
       uiState.actions.setItemControls(null);
     }
   },
-  mouseup: ({ uiState, scene }) => {
+  mouseup: ({ uiState, scene, isRendererInteraction }) => {
     if (uiState.mode.type !== 'PLACE_ITEM') return;
 
-    if (uiState.mode.id !== null) {
-      const viewItemId = generateId();
+    if (isRendererInteraction) {
+      if (uiState.mode.id !== null) {
+        const viewItemId = generateId();
 
-      scene.createViewItem({
-        ...VIEW_ITEM_DEFAULTS,
-        id: viewItemId,
-        modelItem: uiState.mode.id,
-        tile: uiState.mouse.position.tile
-      });
+        scene.createViewItem({
+          ...VIEW_ITEM_DEFAULTS,
+          id: viewItemId,
+          modelItem: uiState.mode.id,
+          tile: uiState.mouse.position.tile
+        });
+      }
     }
 
     uiState.actions.setMode(

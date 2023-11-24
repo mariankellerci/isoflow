@@ -23,25 +23,27 @@ export const PlaceIcon: ModeActions = {
       uiState.actions.setItemControls(null);
     }
   },
-  mouseup: ({ uiState, scene }) => {
+  mouseup: ({ uiState, scene, isRendererInteraction }) => {
     if (uiState.mode.type !== 'PLACE_ICON') return;
 
-    if (uiState.mode.id !== null) {
-      const viewItemId = generateId();
-      const modelItemId = generateId();
+    if (isRendererInteraction) {
+      if (uiState.mode.id !== null) {
+        const viewItemId = generateId();
+        const modelItemId = generateId();
 
-      scene.createModelItem({
-        id: modelItemId,
-        name: 'Untitled',
-        icon: uiState.mode.id
-      });
+        scene.createModelItem({
+          id: modelItemId,
+          name: 'Untitled',
+          icon: uiState.mode.id
+        });
 
-      scene.createViewItem({
-        ...VIEW_ITEM_DEFAULTS,
-        id: viewItemId,
-        modelItem: modelItemId,
-        tile: uiState.mouse.position.tile
-      });
+        scene.createViewItem({
+          ...VIEW_ITEM_DEFAULTS,
+          id: viewItemId,
+          modelItem: modelItemId,
+          tile: uiState.mouse.position.tile
+        });
+      }
     }
 
     uiState.actions.setMode(
