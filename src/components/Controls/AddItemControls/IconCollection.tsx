@@ -47,7 +47,7 @@ export const IconCollection = ({
             textTransform="uppercase"
             fontWeight={600}
           >
-            {id}
+            {id} icons
           </Typography>
           {isExpanded ? (
             <ChevronUpIcon color="action" />
