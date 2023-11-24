@@ -6,21 +6,20 @@ import { VIEW_ITEM_DEFAULTS } from 'src/config';
 export const PlaceItem: ModeActions = {
   mousemove: () => {},
   mousedown: ({ uiState, scene, isRendererInteraction }) => {
-    if (uiState.mode.type !== 'PLACE_ITEM' || !isRendererInteraction) return;
+    if (uiState.mode.type !== 'PLACE_ITEM') return;
 
-    if (!uiState.mode.iconId) {
+    if (isRendererInteraction && !uiState.mode.iconId) {
       const itemAtTile = getItemAtTile({
         tile: uiState.mouse.position.tile,
         scene
       });
 
+      uiState.actions.setItemControls(null);
       uiState.actions.setMode({
         type: 'CURSOR',
         mousedownItem: itemAtTile,
         showCursor: true
       });
-
-      uiState.actions.setItemControls(null);
     }
   },
   mouseup: ({ uiState, scene, isRendererInteraction }) => {

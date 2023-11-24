@@ -53,6 +53,36 @@ export const useInteractionManager = () => {
   const scene = useScene();
   const { size: rendererSize } = useResizeObserver(uiState.rendererEl);
 
+  useEffect(() => {
+    if (!rendererRef.current) return;
+
+    if (reducerTypeRef.current !== uiState.mode.type) {
+      const mode = modes[uiState.mode.type];
+      const prevReducer = reducerTypeRef.current
+        ? modes[reducerTypeRef.current]
+        : null;
+
+      const baseState = {
+        model,
+        scene,
+        uiState,
+        rendererSize,
+        isRendererInteraction: true,
+        rendererRef: rendererRef.current
+      };
+
+      if (prevReducer && prevReducer.exit) {
+        prevReducer.exit(baseState);
+      }
+
+      if (mode.entry) {
+        mode.entry(baseState);
+      }
+
+      reducerTypeRef.current = uiState.mode.type;
+    }
+  }, [model, scene, uiState, rendererSize]);
+
   const onMouseEvent = useCallback(
     (e: SlimMouseEvent) => {
       if (!rendererRef.current) return;
@@ -73,31 +103,16 @@ export const useInteractionManager = () => {
 
       uiState.actions.setMouse(nextMouse);
 
-      const baseState: State = {
+      const baseState = {
         model,
         scene,
         uiState,
-        rendererRef: rendererRef.current,
         rendererSize,
-        isRendererInteraction: rendererRef.current === e.target
+        isRendererInteraction: e.target === rendererRef.current,
+        rendererRef: rendererRef.current
       };
 
-      if (reducerTypeRef.current !== uiState.mode.type) {
-        const prevReducer = reducerTypeRef.current
-          ? modes[reducerTypeRef.current]
-          : null;
-
-        if (prevReducer && prevReducer.exit) {
-          prevReducer.exit(baseState);
-        }
-
-        if (mode.entry) {
-          mode.entry(baseState);
-        }
-      }
-
       modeFunction(baseState);
-      reducerTypeRef.current = uiState.mode.type;
     },
     [model, scene, uiState, rendererSize]
   );

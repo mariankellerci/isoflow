@@ -3,7 +3,8 @@ import {
   ConnectorAnchor,
   SceneConnector,
   ModeActions,
-  ModeActionsAction,
+  State,
+  ItemReference,
   Coords,
   View
 } from 'src/types';
@@ -74,17 +75,18 @@ const getAnchor = (
   return anchor;
 };
 
-const mousedown: ModeActionsAction = ({
-  uiState,
-  scene,
-  isRendererInteraction
-}) => {
+const mousedown = (
+  { uiState, scene, isRendererInteraction }: State,
+  mousedownItem?: ItemReference | null
+) => {
   if (uiState.mode.type !== 'CURSOR' || !isRendererInteraction) return;
 
-  const itemAtTile = getItemAtTile({
-    tile: uiState.mouse.position.tile,
-    scene
-  });
+  const itemAtTile =
+    mousedownItem ??
+    getItemAtTile({
+      tile: uiState.mouse.position.tile,
+      scene
+    });
 
   if (itemAtTile) {
     uiState.actions.setMode(
@@ -112,7 +114,7 @@ export const Cursor: ModeActions = {
     if (uiState.mode.type !== 'CURSOR') return;
 
     if (uiState.mode.mousedownItem) {
-      mousedown(state);
+      mousedown(state, uiState.mode.mousedownItem);
     }
   },
   mousemove: ({ scene, uiState }) => {

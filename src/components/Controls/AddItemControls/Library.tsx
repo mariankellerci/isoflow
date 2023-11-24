@@ -39,7 +39,7 @@ export const Library = () => {
         updating one instance, updates them all.
       </Alert>
       <Section>
-        <Stack spacing={2}>
+        <Stack spacing={1}>
           {items.length === 0 && (
             <Typography variant="body2">
               No items found yet. Add some items to your view.
