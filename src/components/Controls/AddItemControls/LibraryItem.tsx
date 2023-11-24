@@ -31,7 +31,7 @@ export const LibraryItem = ({ id, onMouseDown }: Props) => {
           p: 2,
           width: '100%',
           borderLeft: '6px solid',
-          borderLeftColor: 'grey.400'
+          borderLeftColor: 'grey.300'
         }}
       >
         <Stack direction="row" alignItems="center" spacing={2}>
