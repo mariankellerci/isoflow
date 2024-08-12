@@ -58,7 +58,7 @@ export const Grid = () => {
           position: 'absolute',
           width: '100%',
           height: '100%',
-          background: `repeat url("${gridTileSvg}")`
+          //background: `repeat url("${gridTileSvg}")`
         }}
       />
     </Box>

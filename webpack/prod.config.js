@@ -1,5 +1,6 @@
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const webpack = require('webpack');
 
 module.exports = {
@@ -49,6 +50,11 @@ module.exports = {
     new webpack.DefinePlugin({
       PACKAGE_VERSION: JSON.stringify(require("../package.json").version),
       REPOSITORY_URL: JSON.stringify(require("../package.json").repository.url),
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: path.resolve(__dirname, '../src/assets'), to: 'assets' }
+      ]
     })
   ],
   resolve: {
